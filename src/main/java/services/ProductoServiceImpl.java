@@ -34,4 +34,21 @@ public class ProductoServiceImpl implements ProductoService{
         lista.add(new Producto(sequence.incrementAndGet(),
                 producto.getNombre(), producto.getMarca(), producto.getDescripcion(), producto.getPrecio()));
     }
+
+    @Override
+    public void Actualizar(Long id, Producto producto) {
+        for (int i = 0; i < lista.size(); i++) {
+            Producto p = lista.get(i);
+            if (p.getId().equals(id)) {
+                lista.set(i, producto);
+            }
+        }
+
+
+    }
+
+    @Override
+    public void Eliminar(Long id) {
+        lista.removeIf(producto -> producto.getId().equals(id));
+    }
 }

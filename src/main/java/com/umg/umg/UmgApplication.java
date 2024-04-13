@@ -16,9 +16,4 @@ public class UmgApplication {
 		SpringApplication.run(UmgApplication.class, args);
 	}
 
-	@GetMapping("/hello")
-	public String Hello(@RequestParam String name){
-		return String.format("Hello %s!", name);
-	}
-
 }
